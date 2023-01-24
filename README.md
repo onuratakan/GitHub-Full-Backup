@@ -1,23 +1,27 @@
-# Get Crypto Price
-A library to getting crypto price.
+# GitHub Backup
+A library to backup your GitHubs.
 # Install
 ```
-pip3 install get-crypto-price
+pip3 install github-backup
 ```
 # Using
 ## In another script
 ```python
-from get_crypto_price import get
-# get(source = "bitstamp", pair = "btcusdt")
-print(get())
+from github_backup import GitHub_Backup
+
+the_backup = GitHub_Backup(user, repo, download_path, token, how_many_release=2000, how_many_issue=2000, how_many_pull_request=2000, verbose=False, releases = True, issues_pull_requests = True, turn_archive=True, archive_name=None)
+
+the_backup.backup()
 ```
 ## In command line
 ```console
-  -h, --help            show this help message and exit
-  -s SOURCE, --source SOURCE
-                        Source
-  -p PAIR, --pair PAIR  Pair
+githubbackup
 ```
+usage:
 ```console
-get_crypto_price
+Usage: githubbackup --user=USER --repo=REPO --download_path=DOWNLOAD_PATH --token=TOKEN <flags>
+  optional flags:        --how_many_release | --how_many_issue |
+                         --how_many_pull_request | --verbose | --releases |
+                         --issues_pull_requests | --turn_archive |
+                         --archive_name
 ```

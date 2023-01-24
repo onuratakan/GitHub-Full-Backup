@@ -1,46 +1,51 @@
 from setuptools import setup
 
 
-setup(name='get_crypto_price',
+setup(name='github_backup',
 version='0.1.0',
-description="""A library to getting crypto price.""",
+description="""A library to backup your GitHubs.""",
 long_description="""
-# Get Crypto Price
-A library to getting crypto price.
+# GitHub Backup
+A library to backup your GitHubs.
 # Install
 ```
-pip3 install get-crypto-price
+pip3 install github-backup
 ```
 # Using
 ## In another script
 ```python
-from get_crypto_price import get
-# get(source = "bitstamp", pair = "btcusdt")
-print(get())
+from github_backup import GitHub_Backup
+
+the_backup = GitHub_Backup(user, repo, download_path, token, how_many_release=2000, how_many_issue=2000, how_many_pull_request=2000, verbose=False, releases = True, issues_pull_requests = True, turn_archive=True, archive_name=None)
+
+the_backup.backup()
 ```
 ## In command line
 ```console
-  -h, --help            show this help message and exit
-  -s SOURCE, --source SOURCE
-                        Source
-  -p PAIR, --pair PAIR  Pair
+githubbackup
 ```
+usage:
 ```console
-get_crypto_price
+Usage: githubbackup --user=USER --repo=REPO --download_path=DOWNLOAD_PATH --token=TOKEN <flags>
+  optional flags:        --how_many_release | --how_many_issue |
+                         --how_many_pull_request | --verbose | --releases |
+                         --issues_pull_requests | --turn_archive |
+                         --archive_name
 ```
 """,
 long_description_content_type='text/markdown',
-url='https://github.com/onuratakan/get_crypto_price',
+url='https://github.com/onuratakan/GitHub-Backup',
 author='Onur Atakan ULUSOY',
 author_email='atadogan06@gmail.com',
 license='MIT',
-packages=["get_crypto_price"],
+packages=["github_backup"],
 package_dir={'':'src'},
 install_requires=[
-    "requests==2.25.1"
+    "tqdm==4.64.1",
+    "fire==0.5.0"
 ],
 entry_points = {
-    'console_scripts': ['get_crypto_price=get_crypto_price.get_crypto_price:get'],
+    'console_scripts': ['githubbackup=github_backup.github_backup:main'],
 },
 python_requires=">= 3",
 zip_safe=False)
