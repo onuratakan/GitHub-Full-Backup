@@ -1,4 +1,4 @@
-# GitHub Backup
+# GitHub Full Backup
 A library to backup your GitHubs.
 # Install
 ```
@@ -7,7 +7,7 @@ pip3 install github-backup
 # Using
 ## In another script
 ```python
-from github_backup import GitHub_Backup
+from github_full_backup import GitHub_Backup
 
 the_backup = GitHub_Backup(user, repo, download_path, token, how_many_release=2000, how_many_issue=2000, how_many_pull_request=2000, verbose=False, releases = True, issues_pull_requests = True, turn_archive=True, archive_name=None)
 

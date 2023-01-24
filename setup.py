@@ -1,11 +1,11 @@
 from setuptools import setup
 
 
-setup(name='github_backup',
+setup(name='github_full_backup',
 version='0.1.0',
 description="""A library to backup your GitHubs.""",
 long_description="""
-# GitHub Backup
+# GitHub Full Backup
 A library to backup your GitHubs.
 # Install
 ```
@@ -14,7 +14,7 @@ pip3 install github-backup
 # Using
 ## In another script
 ```python
-from github_backup import GitHub_Backup
+from github_full_backup import GitHub_Backup
 
 the_backup = GitHub_Backup(user, repo, download_path, token, how_many_release=2000, how_many_issue=2000, how_many_pull_request=2000, verbose=False, releases = True, issues_pull_requests = True, turn_archive=True, archive_name=None)
 
@@ -38,14 +38,14 @@ url='https://github.com/onuratakan/GitHub-Backup',
 author='Onur Atakan ULUSOY',
 author_email='atadogan06@gmail.com',
 license='MIT',
-packages=["github_backup"],
+packages=["github_full_backup"],
 package_dir={'':'src'},
 install_requires=[
     "tqdm==4.64.1",
     "fire==0.5.0"
 ],
 entry_points = {
-    'console_scripts': ['githubbackup=github_backup.github_backup:main'],
+    'console_scripts': ['githubbackup=github_full_backup.github_full_backup:main'],
 },
 python_requires=">= 3",
 zip_safe=False)
