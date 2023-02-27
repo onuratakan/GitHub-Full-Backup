@@ -2,7 +2,7 @@
 A library to backup your GitHubs.
 # Install
 ```
-pip3 install github-backup
+pip3 install github_full_backup
 ```
 # Using
 ## In another script
